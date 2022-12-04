@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Math Game</title>
+    <link rel="stylesheet" href="assets/css/quickMath.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Quick Math</h1>
+        </div>
+
+        <!--Splash Page-->
+        <div class="card" id="splash-page">
+            <form id="start-form">
+                <div class="selection-container">
+                    <!-- 10 Questions -->
+                    <div class="radio-container">
+                        <label for="value-10">10 Questions</label>
+                        <input type="radio" name="questions" value="10" id="value-10">
+                        <span class="best-score">
+                            <span>Best Score</span>
+                            <span class="best-score-value"></span>
+                        </span>
+                    </div>
+                    <!-- 20 Questions -->
+                    <div class="radio-container">
+                        <label for="value-20">20 Questions</label>
+                        <input type="radio" name="questions" value="20" id="value-20">
+                        <span class="best-score">
+                            <span>Best Score</span>
+                            <span class="best-score-value"></span>
+                        </span>
+                    </div>
+                    <!-- 30 Questions -->
+                    <div class="radio-container">
+                        <label for="value-30">30 Questions</label>
+                        <input type="radio" name="questions" value="30" id="value-30">
+                        <span class="best-score">
+                            <span>Best Score</span>
+                            <span class="best-score-value"></span>
+                        </span>
+                    </div>
+                    <!-- 50 Questions -->
+                    <div class="radio-container">
+                        <label for="value-50">50 Questions</label>
+                        <input type="radio" name="questions" value="50" id="value-50">
+                        <span class="best-score">
+                            <span>Best Score</span>
+                            <span class="best-score-value"></span>
+                        </span>
+                    </div>
+                </div>
+                <!-- Start Button -->
+                <div class="selection-footer">
+                    <button class="start" type="submit">Start</button>
+                </div>
+            </form>
+        </div>
+        <!-- Countdown Page -->
+        <div class="card" id="countdown-page" hidden>
+            <h1 class="countdown"></h1>
+        </div>
+
+        <!-- Game Page -->
+        <div class="card" id="game-page" hidden>
+            <!-- Item Container -->
+            <div class="item-container"></div>
+
+            <!-- Right/Wrong Buttons -->
+            <div class="item-footer">
+                <button class="wrong" onclick="select(false)">Wrong</button>
+                <button class="right" onclick="select(true)">Right</button>
+            </div>
+        </div>
+        
+
+        <!-- Score Page -->
+        <div class="card" id="score-page" hidden>
+            <!-- Score Container -->
+            <div class="score-container">
+                <h1 class="title">Your Time</h1>
+                <h1 class="final-time"></h1>
+                <h1 class="base-time"></h1>
+                <h1 class="penalty-time"></h1>
+            </div>
+            <!-- Play Again Button -->
+            <div class="score-footer">
+                <button class="play-again" onclick="playAgain()" hidden>Play Again</button>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- Script -->
+    <script src="assets/js/quickMath.js"></script>
+    <script src="assets/js/shuffle.js"></script>
+</body>
+</html>
